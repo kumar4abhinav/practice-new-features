@@ -17,7 +17,15 @@ public class ThreeParameterLambdaExpressionExample {
         };  
         
         // Invoking the method defined in the lambda expression  
-        double average = myLambda.calculateAverage(10.0, 20.0, 30.0);  
+        double average = myLambda.calculateAverage(5, 16, 34);  
         System.out.println("Average: " + average);
+        
+        
+		// Using lambda expression to implement the calculateAverage method without return statement
+        ThreeParametersFunctionalInterface myLambda2 = (a, b, c) -> (a + b + c) / 11.0;
+        
+        // Invoking the method defined in the lambda expression  
+        double average2 = myLambda2.calculateAverage(5, 16, 34);  
+        System.out.println("Average: " + average2);
     }  
 }
