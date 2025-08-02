@@ -32,6 +32,17 @@ public class MyClass implements InterfaceA, InterfaceB {
 	public static void main(String[] args) {
 
 		new MyClass().doSomething();
+		
+		
+		//computeIfAbsent example -- For learning only and no relevance to above
+		java.util.Map<String, Integer> nameMap = new java.util.HashMap<>();
+		nameMap.computeIfAbsent("Johner", s -> s.length());
+		
+		//Map size
+		System.out.println(nameMap.size());
+		
+		//Map iteration
+		nameMap.forEach((k,v)-> System.out.println("Key is :"+k+" and value is :"+ String.valueOf(v)));
 
 	}
 }

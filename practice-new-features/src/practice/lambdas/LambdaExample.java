@@ -10,7 +10,8 @@ public class LambdaExample {
 		
 		List<String> languages = Arrays.asList("Java", "Python", "JavaScript", "C++", null);
 		System.out.println("Languages which starts with 'J':");
-		filter(languages, (str) -> str !=null && str.startsWith("P"));
+		
+		filter(languages, (str) -> str !=null && str.startsWith("J"));
 	}
 
 	public static void filter(List<String> names, Predicate<String> condition) {
