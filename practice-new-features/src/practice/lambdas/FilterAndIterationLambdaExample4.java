@@ -33,6 +33,29 @@ public class FilterAndIterationLambdaExample4 {
 		Stream<Product> filtered_data = list.stream().filter(p -> p.price > 20000);
 
 		// using lambda to iterate through collection
-		filtered_data.forEach(product -> System.out.println(product.name + ": " + product.price));
+		System.out.println("Using lambda to iterate through Filtered Collection with price > 20000");
+		filtered_data.forEach((Product product) -> System.out.println(product.name + ": " + product.price)); // Functional
+																												// method's
+																												// argument
+																												// explicitly
+																												// typecasted
+
+		
+		
+		// using lambda to iterate through collection
+		System.out.println();
+		System.out.println("Using lambda to iterate through Original Unfiltered Collection");
+		
+		list.stream().forEach(product -> System.out.println(product.name + ": " + product.price)); // Earlier Stream
+																									// already
+																									// closed in
+																									// previous
+																									// invocation of
+																									// forEach terminal
+																									// operation; hence
+																									// new stream
+																									// created by
+																									// calling
+																									// list.stream(); parameter inferred by compiler
 	}
 }

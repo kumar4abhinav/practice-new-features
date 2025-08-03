@@ -12,7 +12,7 @@ public class SingleParameterLambdaExpressionExample{
 	public static void main(String[] args) {
 
 		// Lambda expression with single parameter.
-		Sayable s1 = (name) -> {
+		Sayable s1 = (String name) -> {
 			
 			String dex = "dexter2";
 			return "Hello, " + name + dex;
