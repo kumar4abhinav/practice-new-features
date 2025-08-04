@@ -46,7 +46,7 @@ public class FlatMapThirdExample {
 		System.out.println(flattenedDataListStructure2);
 
 		
-	      // Compare to above using map
+	    // Compare to above using map
 		List<Stream<List<Integer>>> flattenedDataListStructure3 = dataListStructure.stream()
                                                 .map(List::stream) 
                                                 .collect(Collectors.toList());
