@@ -12,7 +12,7 @@ public class DifferentMapFunctionsExample {
         // Example where map() creates a nested structure:
         List<List<Integer>> nestedList = Arrays.asList(Arrays.asList(-1, -2), Arrays.asList(11, 13), Arrays.asList(23, 71));
         
-        
+        //Map function
         List<Stream<Integer>> streamOfStreams = nestedList.stream()
                                                          .map(List::stream)
                                                          .collect(Collectors.toList());
@@ -29,6 +29,13 @@ public class DifferentMapFunctionsExample {
                                                   .collect(Collectors.toList());
         System.out.println(flattenedList);
         // Output: [-1, -2, 11, 13, 23, 71]
+        
+        //Map function
+        List<String> myList = Stream.of("a", "b")
+        		  .map(String::toUpperCase)
+        		  .collect(Collectors.toList());
+        
+        System.out.println(myList);
         
     }
 }
