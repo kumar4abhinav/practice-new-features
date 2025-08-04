@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FlatMapThirdExample {
 
@@ -44,6 +45,13 @@ public class FlatMapThirdExample {
 		
 		System.out.println(flattenedDataListStructure2);
 
+		
+	      // Compare to above using map
+		List<Stream<List<Integer>>> flattenedDataListStructure3 = dataListStructure.stream()
+                                                .map(List::stream) 
+                                                .collect(Collectors.toList());
+		
+		System.out.println(flattenedDataListStructure3);
 	}
 
 }
