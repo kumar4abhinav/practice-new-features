@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class SimpleMapExample {
+public class MapsExample {
     public static void main(String[] args) {
         List<String> words = Arrays.asList("hello", "world", "java");
 
@@ -17,7 +17,7 @@ public class SimpleMapExample {
         System.out.println(upperCaseWords); // Output: [HELLO, WORLD, JAVA]
 
         // Example where map() creates a nested structure:
-        List<List<Integer>> nestedList = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4));
+        List<List<Integer>> nestedList = Arrays.asList(Arrays.asList(-1, -2), Arrays.asList(11, 13), Arrays.asList(23, 71));
         List<Stream<Integer>> streamOfStreams = nestedList.stream()
                                                          .map(List::stream)
                                                          .collect(Collectors.toList());
