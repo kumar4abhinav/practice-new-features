@@ -18,6 +18,22 @@ public class FlatMapSecondExample {
 
         System.out.println(words); // Output: [Hello, world, Java, streams, are, powerful]
 
+        
+        
+        
+        List<List<String>> listOfTitleLists = Arrays.asList(
+        	    Arrays.asList("java basics", "programming principles"),
+        	    Arrays.asList("data structures", "algorithms"),
+        	    Arrays.asList("web development", "database design")
+        	  );
+
+        	  List<String> transformedAndFlattenedTitles = listOfTitleLists.stream()
+        	    .flatMap(List::stream)
+        	    .map(String::toUpperCase)
+        	    .toList();
+        	  System.out.println(transformedAndFlattenedTitles);
+        	 
+        	// Output: [JAVA BASICS, PROGRAMMING PRINCIPLES, DATA STRUCTURES, ALGORITHMS, WEB DEVELOPMENT, DATABASE DESIGN]
 	}
 
 }

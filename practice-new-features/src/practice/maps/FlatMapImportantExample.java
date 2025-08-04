@@ -45,6 +45,15 @@ public class FlatMapImportantExample {
                                                 .flatMap(List::stream)
                                                 .flatMap(List::stream)
                                                 .collect(Collectors.toList());		
+		/**
+		 * flatMap flattens 2 nested streams into 1 stream
+		 * 
+		 */
+		//Transformation steps explained
+		//List<List<List<Integer>>>  -> stream() ->  Stream<List<List<Integer>>>   -> flatMap(List::stream)  Stream<List<Integer>>  
+		//-> flatMap(List::stream) -> Stream <Integer>
+		
+		
 		System.out.println("flattenedDataListStructure2");
 		System.out.println(flattenedDataListStructure2);
 		System.out.println();
