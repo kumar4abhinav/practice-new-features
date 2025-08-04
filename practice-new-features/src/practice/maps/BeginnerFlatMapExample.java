@@ -1,11 +1,10 @@
 package practice.maps;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FlatMapBeginnerExample {	
+public class BeginnerFlatMapExample {	
 	
 
 	public static void main(String[] args) {
@@ -17,15 +16,15 @@ public class FlatMapBeginnerExample {
 	    
 	    System.out.println(nameLengths.toString());
 	    // nameLengths will be [5, 3, 7]
+
 	    
-	    
-	    List<List<Integer>> nestedLists = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4, 5));
-	    List<Integer> flattenedList = nestedLists.stream()
-	                                             .flatMap(Collection::stream)
-	                                             .collect(Collectors.toList());
-	    
-	    System.out.println(flattenedList.toString());
-	    // flattenedList will be [1, 2, 3, 4, 5]
+        List<String> words = Arrays.asList("hello", "world", "java");
+        // Use map to transform each word to its uppercase version
+        List<String> upperCaseWords = words.stream()
+                                            .map(String::toUpperCase)
+                                            .collect(Collectors.toList());
+
+        System.out.println(upperCaseWords); // Output: [HELLO, WORLD, JAVA]
 
 	}
 
