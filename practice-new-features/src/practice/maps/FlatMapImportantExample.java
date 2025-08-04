@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class FlatMapThirdExample {
+public class FlatMapImportantExample {
 
 	public static void main(String[] args) {		
 
@@ -20,38 +20,45 @@ public class FlatMapThirdExample {
 		List<List<Integer>> arrayListStructure = Arrays.asList(Arrays.asList(0, 1), Arrays.asList(7, 17),
 				Arrays.asList(31, 37));
 
-        
+		//linkedListStructure structure consisting of List of List of List
 		List<List<List<Integer>>> dataListStructure = new LinkedList<List<List<Integer>>>();
 		dataListStructure.add(linkedListStructure);
-		dataListStructure.add(arrayListStructure);		
+		dataListStructure.add(arrayListStructure);	    
 		
-	      // Use flatMap to flatten the list of lists into a single list of integers
-		List<List<Integer>> flattenedDataListStructure = dataListStructure.stream()
+		 
+		/**
+         * Example of Single invocation of flatMap
+         */
+		List<List<Integer>> flattenedDataListStructure1 = dataListStructure.stream()
                                                   .flatMap(List::stream) 
-                                                  .collect(Collectors.toList());
-		
-		System.out.println(flattenedDataListStructure);
+                                                  .collect(Collectors.toList());		
+		System.out.println("flattenedDataListStructure1");
+		System.out.println(flattenedDataListStructure1);
+		System.out.println();
 		
 		
         
         /**
          * Example of Double invocation of flatMap
          */
-	      // Use flatMap to flatten the list of lists into a single list of integers
 		List<Integer> flattenedDataListStructure2 = dataListStructure.stream()
                                                 .flatMap(List::stream)
                                                 .flatMap(List::stream)
-                                                .collect(Collectors.toList());
-		
+                                                .collect(Collectors.toList());		
+		System.out.println("flattenedDataListStructure2");
 		System.out.println(flattenedDataListStructure2);
-
+		System.out.println();
 		
-	    // Compare to above using map
-		List<Stream<List<Integer>>> flattenedDataListStructure3 = dataListStructure.stream()
+		
+		
+		 /**
+         * Example of map invocation
+         */
+		List<Stream<List<Integer>>> mapStructure = dataListStructure.stream()
                                                 .map(List::stream) 
-                                                .collect(Collectors.toList());
-		
-		System.out.println(flattenedDataListStructure3);
+                                                .collect(Collectors.toList());		
+		System.out.println("mapStructure");
+		System.out.println(mapStructure);
 	}
 
 }

@@ -37,5 +37,14 @@ public class DifferentMapFunctionsExample {
         
         System.out.println(myList);
         
+        List<List<String>> listOfTitleLists = Arrays.asList(
+        	    Arrays.asList("java basics", "programming principles"),
+        	    Arrays.asList("data structures", "algorithms"),
+        	    Arrays.asList("web development", "database design")
+        	  );
+
+        List<String> flattenedTitles = listOfTitleLists.stream().flatMap(List::stream).toList();
+        System.out.println(flattenedTitles);
+        
     }
 }
