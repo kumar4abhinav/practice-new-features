@@ -3,11 +3,11 @@ package practice.trywithresources;
 public class AutoCloseableResourcesFirst implements AutoCloseable {
 
     public AutoCloseableResourcesFirst() {
-        System.out.println("Constructor -&gt; AutoCloseableResources_First");
+        System.out.println("Constructor :: AutoCloseableResources_First");
     }
 
     public void doSomething() {
-        System.out.println("Something -&gt; AutoCloseableResources_First");
+        System.out.println("Something :: AutoCloseableResources_First");
     }
 
     @Override

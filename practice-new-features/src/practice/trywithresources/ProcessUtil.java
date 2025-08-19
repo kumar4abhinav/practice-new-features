@@ -14,14 +14,17 @@ public class ProcessUtil {
 	        af.doSomething();
 	        as.doSomething();
 	        
-	        int a =1;
-	        int b = a/a;
+	      	String s ="P";
+	    	Integer.parseInt(s);
 	    }
-	    catch(Exception e) {
-	    	System.out.println(e.getClass()+"::"+e.getMessage());
-	    }
+		catch (Exception e) {
+			System.out.println(
+					"Inside catch block and exception specifics are - " + e.getClass().getName() + "::" + e.getMessage());
+		}
 	    finally {
-	    	String s ="4";
+	    	
+	    	System.out.println("Inside finally block");
+	    	String s ="U";
 	    	Integer.parseInt(s);
 	    }
 	}
